@@ -1,0 +1,124 @@
+{
+  "__comment__" : "This is a sample configuration file, edit a section and remove the _ in front of the name. Refer to the user's guide for details.",
+  "settings": {
+    "_Cert": "myserver.mydomain.com",
+    "_MongoDb": "mongodb://127.0.0.1:27017/meshcentral",
+    "_MongoDbChangeStream": true,
+    "_WANonly": true,
+    "_LANonly": true,
+    "_Minify": 1,
+    "_SessionTime": 30,
+    "_SessionKey": "MyReallySecretPassword1",
+    "_DbEncryptKey": "MyReallySecretPassword2",
+    "_DbExpire": {
+      "events": 1728000,
+      "powerevents": 864000
+    },
+    "_Port": 443,
+    "_RedirPort": 80,
+    "_AllowLoginToken": true,
+    "_AllowFraming": true,
+    "_WebRTC": false,
+    "_ClickOnce": false,
+    "_SelfUpdate": true,
+    "_AgentPing": 60,
+    "_AgentPong": 60,
+    "_AllowHighQualityDesktop": true,
+    "_UserAllowedIP": "127.0.0.1,192.168.1.0/24",
+    "_UserBlockedIP": "127.0.0.1,::1,192.168.0.100",
+    "_AgentAllowedIP": "192.168.0.100/24",
+    "_AgentBlockedIP": "127.0.0.1,::1",
+    "_LocalDiscovery": {
+      "name": "BeSt Unit's Desktops Central Server",
+      "info": "server untuk memonitor komputer unit"
+    },
+    "_TlsOffload": true,
+    "_MpsTlsOffload": true,
+    "_No2FactorAuth": true,
+    "_WebRtConfig": {
+      "iceServers": [
+        { "urls": "stun:stun.services.mozilla.com" },
+        { "urls": "stun:stun.l.google.com:19302" }
+      ]
+    },
+    "_AutoBackup": {
+      "backupIntervalHours": 24,
+      "keepLastDaysBackup": 10,
+      "zipPassword": "MyReallySecretPassword3",
+      "_backupPath": "C:\\backups"
+    },
+    "_Redirects": {
+      "meshcommander": "https://www.meshcommander.com/"
+    }
+  },
+  "domains": {
+    "": {
+      "Title": "BeSt Central",
+      "Title2": "TM",
+      "TitlePicture": "bms_icon.png",
+      "_UserQuota": 1048576,
+      "_MeshQuota": 248576,
+      "_NewAccounts": true,
+      "_NewAccountEmailDomains": [ "sample.com" ],
+      "_NewAccountsRights": [ "nonewgroups", "notools" ],
+      "Footer": "Powered by <a href='#'>bestdigital.tech</a>",
+      "_CertUrl": "https://192.168.2.106:443/",
+      "_PasswordRequirements": { "min": 8, "max": 128, "upper": 1, "lower": 1, "numeric": 1, "nonalpha": 1, "reset": 90, "force2factor": true },
+      "_AgentNoProxy": true,
+      "_GeoLocation": true,
+      "_UserAllowedIP": "127.0.0.1,192.168.1.0/24",
+      "_UserBlockedIP": "127.0.0.1,::1,192.168.0.100",
+      "_AgentAllowedIP": "192.168.0.100/24",
+      "_AgentBlockedIP": "127.0.0.1,::1",
+      "___UserSessionIdleTimeout__" : "Number of user idle minutes before auto-disconnect",
+      "_UserSessionIdleTimeout" : 30,
+      "__UserConsentFlags__" : "Set to: 1 for desktop, 2 for terminal, 3 for files, 7 for all",
+      "_UserConsentFlags" : 7,
+      "_Limits": {
+        "_MaxDevices": 100,
+        "_MaxUserAccounts": 100,
+        "_MaxUserSessions": 100,
+        "_MaxAgentSessions": 100,
+        "MaxSingleUserSessions": 10
+      },
+      "_Redirects": {
+        "meshcommander": "https://www.meshcommander.com/"
+      },
+      "_yubikey": { "id": "0000", "secret": "xxxxxxxxxxxxxxxxxxxxx", "_proxy": "http://myproxy.domain.com:80" },
+      "_httpheaders": { "Strict-Transport-Security": "max-age=360000" },
+      "_agentConfig": [ "webSocketMaskOverride=1" ]
+    },
+    "customer1": {
+      "DNS": "customer1.myserver.com",
+      "Title": "Customer1",
+      "Title2": "TestServer",
+      "NewAccounts": 1,
+      "Auth": "sspi",
+      "Footer": "Test",
+      "_CertUrl": "https://192.168.2.106:443/"
+    },
+    "info": {
+      "share": "C:\\ExtraWebSite"
+    }
+  },
+  "_letsencrypt": {
+    "__comment__": "Go to https://letsdebug.net/ first before trying Let's Encrypt.",
+    "email": "myemail@myserver.com ",
+    "names": "myserver.com,customer1.myserver.com",
+    "rsaKeySize": 3072,
+    "production": false
+  },
+  "_peers": {
+    "serverId": "server1",
+    "servers": {
+      "server1": { "url": "wss://192.168.2.133:443/" },
+      "server2": { "url": "wss://192.168.1.106:443/" }
+    }
+  },
+  "_smtp": {
+    "host": "smtp.myserver.com",
+    "port": 25,
+    "from": "myemail@myserver.com",
+    "tls": false
+  }
+}
